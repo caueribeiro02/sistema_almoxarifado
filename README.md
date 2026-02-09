@@ -39,20 +39,6 @@ nano config/db.php
 
 - Recursos: AJAX, Session timeout, Exportação CSV
 ---
-# 📁 Estrutura de Arquivos
-```text
-📁 almoxarifado-saude/
-├── 📄 index.php          # Dashboard principal
-├── 📄 login.php         # Autenticação moderna
-├── 📄 unidades.php      # Gestão multi-unidades
-├── 📄 relatorios.php    # Gráficos e relatórios
-├── 📄 logs.php          # Sistema de auditoria
-├── 📄 estoque_critico.php # Alertas de estoque
-├── 📁 ajax/             # Endpoints para buscas
-├── 📁 config/           # Configurações do sistema
-└── 📄 .htaccess         # Segurança Apache
-```
----
 # 🔐 Segurança Implementada
 ### ✅ Proteção contra SQL Injection (Prepared Statements)
 ### ✅ Hash de senhas (password_hash)
