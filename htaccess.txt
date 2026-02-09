@@ -1,0 +1,24 @@
+# .htaccess
+Options -Indexes
+ServerSignature Off
+
+# Proteger arquivos sensíveis
+<FilesMatch "\.(sql|log|env|ini)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger diretórios
+RedirectMatch 403 ^/core/?$
+RedirectMatch 403 ^/config/?$
+
+# Forçar HTTPS em produção
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Proteção contra hotlinking
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?seusite.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
